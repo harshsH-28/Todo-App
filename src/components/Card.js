@@ -22,7 +22,15 @@ function Card({ rightClick, leftClick }) {
           setTitle(e.target.value);
         }}
       />
-      <input type="text" placeholder="Description" className="mt-4" />
+      <input
+        type="text"
+        placeholder="Description"
+        className="mt-4"
+        value={description}
+        onChange={(e) => {
+          setDescription(e.target.value);
+        }}
+      />
       {clicked ? (
         <div className="flex justify-around text-white mt-4">
           <button onClick={leftClick} className="mr-6">{`<`}</button>
