@@ -8,7 +8,7 @@ function Todo({ todo, handleRight }) {
         Todo
       </h1>
       {todo.map((item) => {
-        return <Card rightClick={handleRight} />;
+        return <Card card={item} rightClick={handleRight} />;
       })}
     </div>
   );

@@ -8,7 +8,7 @@ function Done({ done, handleLeft }) {
         Done
       </h1>
       {done.map((item) => {
-        return <Card leftClick={handleLeft} />;
+        return <Card card={item} leftClick={handleLeft} />;
       })}
     </div>
   );

@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function Card({ rightClick, leftClick }) {
+function Card({ rightClick, leftClick, card }) {
   const [clicked, setClicked] = useState(false);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState(card.title);
+  const [description, setDescription] = useState(card.description);
+
   const handleClick = () => {
     setClicked(!clicked);
   };
+
+  useEffect(() => {
+    card.title = title;
+    card.description = description;
+  }, [title, description]);
 
   return (
     <div

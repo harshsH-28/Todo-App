@@ -9,31 +9,35 @@ function Home() {
   const [done, setDone] = useState([]);
 
   const handleTodoRight = () => {
-    const card = todo.splice(0, 1);
+    const card = todo.splice(0, 1)[0];
     setTodo([...todo]);
     setInProgress([...inProgress, card]);
   };
 
   const handleInProgressRight = () => {
-    const card = inProgress.splice(0, 1);
+    const card = inProgress.splice(0, 1)[0];
     setInProgress([...inProgress]);
     setDone([...done, card]);
   };
 
   const handleInProgressLeft = () => {
-    const card = inProgress.splice(0, 1);
+    const card = inProgress.splice(0, 1)[0];
     setInProgress([...inProgress]);
     setTodo([...todo, card]);
   };
 
   const handleDoneLeft = () => {
-    const card = done.splice(0, 1);
+    const card = done.splice(0, 1)[0];
     setDone([...done]);
     setInProgress([...inProgress, card]);
   };
 
   const addinTodo = () => {
-    setTodo([...todo, "todo"]);
+    const newTodo = {
+      title: "",
+      description: "",
+    };
+    setTodo([...todo, newTodo]);
   };
   return (
     <div className="relative">
@@ -48,7 +52,7 @@ function Home() {
       </div>
       <button
         onClick={addinTodo}
-        className="fixed w-16 h-16 top-[55em] left-[112em] boder-2 border-black rounded-full bg-[#FFC93C] shadow-md"
+        className="fixed w-16 h-16 inset-0 boder-2 border-black rounded-full bg-[#FFC93C] shadow-md"
       >
         +
       </button>

@@ -8,7 +8,9 @@ function InProgress({ inProgress, handleRight, handleLeft }) {
         InProgress
       </h1>
       {inProgress.map((item) => {
-        return <Card leftClick={handleLeft} rightClick={handleRight} />;
+        return (
+          <Card card={item} leftClick={handleLeft} rightClick={handleRight} />
+        );
       })}
     </div>
   );
